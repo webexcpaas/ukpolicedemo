@@ -120,6 +120,42 @@ footer span a:hover {
 	}
 }
 
+.leave-site-button {
+        /* Visual styling */
+        background-color: #c00; /* Dark red color similar to the image */
+        color: white;
+        padding: 15px 25px; /* Adjust padding for button size */
+        text-decoration: none; /* Removes underline from link */
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap; /* Prevents the text from wrapping */
+        display: inline-block; /* Allows padding, width/height, and transforms */
+        border-radius: 0; /* Sharp corners */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow for depth */
+
+        /* Positioning */
+        position: fixed; /* Keeps the button in place while scrolling */
+        right: 0; /* Aligns the button to the right edge of the viewport */
+        top: 50%; /* Starts the button's top edge at the vertical center */
+        z-index: 1000; /* Ensures the button appears above other content */
+
+        /* Transformation for rotation and vertical centering */
+        /* 1. translateY(-50%): Moves the button up by half its own height, vertically centering it.
+           2. rotate(90deg): Rotates the button 90 degrees clockwise.
+           3. transform-origin: 100% 0%;: Sets the pivot point for rotation to the top-right corner of the *un-rotated* button.
+              This ensures that after rotation, the button's right edge remains aligned with `right: 0;`
+              and is vertically centered. */
+        transform: translateY(-50%) rotate(90deg);
+        transform-origin: 100% 0%;
+
+        /* Hover effect */
+        transition: background-color 0.3s ease; /* Smooth transition for hover */
+    }
+
+    .leave-site-button:hover {
+        background-color: #a00; /* Slightly darker red on hover */
+    }
+
 @media screen and (max-width: 400px) {
   body {
     margin: 8px 2px;
